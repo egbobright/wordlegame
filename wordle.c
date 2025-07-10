@@ -28,7 +28,7 @@ void Example_print_results(Result* res){
             printf("%s\n", "Green");
             break;
         case ResultYellow:
-            printf("%s", "Yellow");
+            printf("%s\n", "Yellow");
             break;
         case ResultRed:
             printf("%s\n", "Red");
@@ -75,7 +75,7 @@ Result* cw(char* guess, char* word){
 
 Result cc(char guess, int idx, char* word){
 
-    const char correct = word[idx];
+    char correct = word[idx];
 
     if(guess == correct)
           return ResultGreen;
@@ -93,8 +93,8 @@ bool isin(char c, char* str){
     for(i=0; i<size; i++){
         if(str[i] == c){
             ret = true;
+            break;
         }
-        break;
     }
     return ret;
 
